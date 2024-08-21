@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up </title>
+</head>
+<body>
+
+    <h3>welcom to sign up page</h3>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <form action="/signup/"method='POST'>
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text"id='username'name='username'placeholder='Enter the user name(only letters and numbers)'required>
+         <br>
+        <label for="">First Name</label>
+        <input type="text"id='fname'name='fname'placeholder='Enter the first name'required>
+        <br>
+        <label for="">Last Name</label>
+        <input type="text"id='lname'name='lname'placeholder='Enter the  Last name'required>
+        <br>
+
+        <label for="">Email  Adress</label>
+        <input type="email"id='email'name='email'placeholder='Enter the Email Adress'required>
+        <br>
+
+        <label for="">Password</label>
+        <input type="password"id='pass1'name='pass1'placeholder='Create a Password'required>
+        <br>
+
+        <label for="">Confirm your Password</label>
+        <input type="password"id='pass2'name='pass2'placeholder='Re Enter the Password'required>
+        
+        <br>
+        <button type="submit">SignUp</button>
+
+    </form>
+    <a href="/signin/">Signin</a>
+</body>
+</html>

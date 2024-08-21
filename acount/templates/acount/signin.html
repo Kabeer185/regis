@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up </title>
+</head>
+<body>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h3>welcom to sign in page</h3>
+    <form action="/signin/"method='POST'
+    
+    >
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text"id='username' name='username' placeholder='Enter the user name(only letters and numbers)'required>
+        <br>
+        <label for="">Password</label>
+        <input type="password"id='pass1' name='pass1' placeholder='Enter the  Password'required>
+        
+        <br>
+        <button type="submit"> SignIn</button>
+        <a href="forget_password">forget password</a>
+
+    </form>
+</body>
+</html>

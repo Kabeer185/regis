@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acount</title>
+</head>
+<body>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h2>welcome to the home page </h2>
+    
+    {% if user.is_authenticated %}
+    <h3>hello {{ fname }}</h3>
+    <h4> you are successfuly logged in. </h4> 
+    <button type="submit"> <a href="signout">SignOut</a></button>   
+   
+    {% else %}
+    <button type="submit"><a href="signin">SignIn</a></button>
+    <button type="submit"><a href="signup">SignUp</a></button>
+    {% endif %}
+</body>
+</html>
